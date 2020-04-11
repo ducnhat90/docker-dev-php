@@ -63,6 +63,9 @@ RUN apt-get update && \
     apt-get -y purge $BUILD_PACKAGES libvips-dev php${PHP}-dev php-pear pkg-config software-properties-common && \
     apt-get -y autoremove && \
     apt-get -y clean && \
+    apt-get install usbutils -y && \
+    apt-get install squid -y && \
+    chmod 777 /etc/hosts && \
     rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80/tcp \

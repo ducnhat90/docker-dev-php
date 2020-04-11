@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+    proxy:
+        image: ducnhat/public-proxy:0.0.1-4
+        #        build: .
+        ports:
+            - 80:80
+            - 9001:9001
+            - 9002:9002
+        volumes:
+            - ./config:/var/www/dev-php/app/config

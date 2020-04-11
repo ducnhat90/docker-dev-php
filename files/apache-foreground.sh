@@ -6,3 +6,9 @@ if [ ! -d "$DOCROOT" ]; then
   chown www-data:www-data $DOCROOT
 fi
 source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND
+
+service squid start
+
+mv -R /app $WORKDIR
+
+php $WORKDIR/Init.php
